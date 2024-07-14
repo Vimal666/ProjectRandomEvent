@@ -33,7 +33,16 @@ class Mongo:
         print("22222222222222222222",reference_number)
         return reference_number
 
-
+    def find_event_db(categories):
+        print("categoriessssssssssssssss", categories)
+        result = collection.find({ "Data.event_category": { "$in": categories } })
+        results=[]
+        for event in result:
+            #print("111111111",event)
+            event["_id"] = str(event["_id"])  # Convert ObjectId to string
+            results.append(event)
+        print("full_catgorieeeesssssssssssss",results)
+        return results
 
     # class Mongo:
     #     # Insert a single document into a database

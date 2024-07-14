@@ -30,3 +30,9 @@ class all_events:
         
         print("Successfully inserted into MongoDB")
         return responses
+    
+    def find_events(categories):
+
+        response=Mongo.find_event_db(categories)
+        print("event dindedddddddddddddddddddddddddd",response)
+        return response
